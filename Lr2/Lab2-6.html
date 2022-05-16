@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Задание №6, Шамуратов Д.Д</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    let yes=0, no=0;
+    let all=0;
+    $(function(){
+        $("#yes").click(function()
+            {
+            yes++;
+            all++;
+            });
+        $("#no").click(function()
+            {
+            no++;
+            all++;
+            });
+        
+    $("#button").click(function()
+        {
+            $('#yes_res').css({ 'display': 'block' }).text('Да: '+ yes/all*100+"%");
+            $('#no_res').css({ 'display': 'block' }).text('Нет: '+ no/all*100+"%");
+            });
+        });
+</script>
+    </head>
+    <body>
+        <h1>Опрос</h1>
+    <form>
+        <p>Вы сегодня кушали?</p>
+        <div>
+            <input type="radio" id="yes" name="contact" value="yes">
+            <label for="yes">Да</label>
+            <input type="radio" id="no" name="contact" value="no">
+            <label for="no">Нет</label>
+            </div>
+    <br>
+        <div>
+            <input type="button" id="button" value="Узнать результаты">
+
+        </div>
+</form>
+<p id="yes_res"></p>
+<p id="no_res"></p>
+</body>
+</html>
