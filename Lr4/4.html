@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <meta charset="UTF-8">
+	    <title>Шамуратов Д.Д</title> 
+	        <link rel="stylesheet" href="jquery-ui.css">
+	        <link rel="stylesheet" href="style.css">
+	        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+	        <script src="jquery-ui.js"></script>
+</head>
+
+<body>
+    <h1>Перечень товаров:</h1>
+<span id="accordion" class="accordion">
+	<h2 class="accordion-header js-accordion-header">Товар1</h2> <div style="height: 600px;">
+    	  <h3>Апельсины</h3>
+	          <img src="https://i.artfile.ru/2880x1920_842326_[www.ArtFile.ru].jpg" alt="" width="316px">	
+	          Главное достоинство — наличие высокого содержания витамина С. Кроме того, апельсины:
+Способствуют повышению иммунитета, укреплению организма, улучшению обмена веществ
+Помогают в борьбе с вирусными инфекциями
+Полезны для лечения и профилактики авитаминозов
+Помогают выводить из организма токсины и продукты обмена
+Полезны для эндокринной системы
+Способствуют нормализации кровяного давления и снижению холестерина
+Оказывают благоприятное воздействие на нервную систему
+Выручают при усталости и упадке сил, являются хорошим источником энергии
+Помогают справиться с заболеваниями полости рта
+Фолиевая кислота, входящая в большом количестве в состав апельсинов, является главным женским витамином
+                <br>
+    </div>
+	<h2 class="accordion-header js-accordion-header">Товар2</h2> 
+	    <div style="height: 600px;">
+	        <h3>Яблоки</h3>
+	        <img src="https://catherineasquithgallery.com/uploads/posts/2021-02/1612566191_132-p-yabloki-fon-zelenie-197.jpg" alt="" width="316px">
+	        Яблоки — отличный источник клетчатки и витамина С. Плоды содержат полифенолы, которые имеют множество преимуществ для здоровья. Одно яблоко среднего размера содержит:
+
+- от 50 до 100 калорий;
+
+- около 1 грамма белка;
+
+- 25 грамм углеводов;
+
+- 19 грамм сахара (природного происхождения);
+
+- почти 3 грамма клетчатки.
+
+Много полезных веществ плода находится в кожуре яблок и в мякоти, поэтому рекомендуется съедать фрукт целиком. Витамин C в них разрушается при долгом хранении, измельчении или термической обработке. Лучше употреблять яблоки сырыми.
+	            <br>
+	    </div> 
+  <h2 class="accordion-header js-accordion-header">Товар3</h2> 
+	    <div style="height: 600px;">
+	        <h3>Бананы</h3> 
+	  <img src="https://pro-dachnikov.com/uploads/posts/2021-11/1638115023_75-pro-dachnikov-com-p-banan-foto-82.jpg" alt="" width="316px">
+	  Бананы обладают антиоксидантными, противовоспалительными, антибактериальными и антиаллергенными свойствами. С помощью банановых составляющих (допамин, серотонин, адреналин и норадреналин) лечат атеросклероз, гипертонию, повышают активность печёночного фермента, снимают судороги.
+	    </div>
+</span>
+<br>
+<h2 align="center">Покупка товара</h2>
+        <input type="button" class="atuin-btn" value="Купить" id="buy" 
+        style="display: inline-flex;
+        margin: 0 auto;
+            display: flex;
+  justify-content: center;
+            text-decoration: none;
+            border: 2px solid #BFE2FF;
+            border-radius: 10px;
+            position: center;
+            overflow: hidden;
+            font-size: 16px;
+            line-height: 20px;
+            padding: 10px 20px;
+            color: #FFF;
+            font-weight: bold;
+            text-transform: uppercase; 
+            font-family: 'Open Sans', sans-serif;
+            background: #c0448f;
+            transition: box-shadow 0.3s, transform 0.3s;
+            cursor: pointer;" >
+<div id="dialog" title="Форма заказа">
+    <h3>Данные:</h3>
+        <form>
+        Фамилия: <input type="text"><br><br>
+        Имя: <input type="text"><br><br>
+        Отчество: <input type="text"><br><br>
+        Дата рождения:  <input type="text"  class="date"><br><br>
+        Адрес:  <input type="text"><br><br>
+        Товар: <input type="text"  class="city"><br><br>
+		Количество товара (кг): <p style="display: inline;" id="sliderValue"></p>
+        <br><br>
+        <div class="slider" style="width: 100%;"></div> <br>
+        Промо-код: <input type="text" title="У Вас есть промокод? Воспользуйтесь им немедленно!"><br><br>
+        <label>Стоимость: </label><span id="stoim"></span> руб  <span style="font-weight: 900; font-size: large;" title="Расчет производится в зависимости от выбора города и веса багажа.">&#63;</span><br><br>
+        </form>
+        <input type="button" class="kup" value="Купить">
+        </div>
+	    <div class="pp" title="Подтверждение">Вы подтверждаете заказ?</div>
+	    <div class="da" title="Готово">Заказ успешно оформлен!</div>
+<script type="text/javascript">
+    $(function(){
+		$("#accordion" ).accordion({  collapsible: true });
+		$('#dialog').dialog({ autoOpen: false, width: 400 });
+        $.datepicker.regional['ru'] = {
+            closeText: 'Закрыть',
+            prevText: 'Предыдущий',
+            nextText: 'Следующий',
+            currentText: 'Сегодня',
+            monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+            monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+            dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+            dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+            dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+            weekHeader: 'Не',
+            dateFormat: 'dd.mm.yy',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+    };
+	$.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
+		$(".date").datepicker({ });
+		$("#buy").click(function(){ 
+        $( "#dialog" ).dialog('open'); 
+        })
+	    var city = ["Апельсины", "Яблоки", "Бананы"]; 
+	$(".city" ).click(function(){
+    $(".city").autocomplete({ source: city });  
+	}); 
+	$('.slider').slider({
+		    min: 0,
+	    	max: 30,
+        change: function (event, ui){
+            var val = $('.slider').slider('value');
+            $('#sliderValue').html(val);
+            var k = $('#sliderValue').html();
+            var stoim = 2500*(1+k/10);
+            document.getElementById('stoim').innerHTML = Math.floor(stoim);
+        }
+    });
+    $( function() {
+    $( document ).tooltip();
+    } );
+    $(".kup" ).click(function(){
+		$('.pp').dialog('open'); })
+	$('.pp').dialog({ autoOpen: false, width: 300, buttons:{
+        "Да!": function(){ $( ".da" ).dialog('open'),$('.pp').dialog('close'), 	$('#dialog').dialog('close');   },
+        "Нет": function(){$('.pp').dialog('close'), 	$('#dialog').dialog('close'); }
+    }})
+	$( ".da" ).dialog({autoOpen: false, width: 300}); 
+	})
+	</script>
+</body>
+</html>
