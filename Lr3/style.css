@@ -1,0 +1,32 @@
+html {
+  background: #ffe5e5;
+  font-family: system-ui;
+  -webkit-font-smoothing: antialiased;
+  padding: 20px 0;
+}
+
+header {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+   .news {
+            margin: 10px;
+            background-color: #b893f5;
+            overflow: hidden;
+            width: 300px;
+            display:inline-block;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 324px;
+        }
+        .img {
+            width: 100%;
+            height: 135px;
+            object-fit: cover;
+        }
+        .img_head img {
+            width: 100%;
+            height: 135px;
+            object-fit: cover;
+        }

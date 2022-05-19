@@ -1,0 +1,77 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Шамуратов Д.Д</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Задание №2 ЛР3</h1>
+        <div class="forma">
+           <form id="zap">      
+              <div class="forma">
+        <div class="form-at">
+            <div class="validate-input-at w-50" data-validate="Обязательное поле">
+                <input class="input-at" type="text" name="name-at" placeholder="Ваше имя" />
+                <span class="focus-input-at"></span>
+            </div>
+        <div class="validate-input-at w-50" data-validate="Обязательное поле">
+            <input class="input-at" type="text" name="email-at" placeholder="Ваш телефон или email" />
+            <span class="focus-input-at"></span>
+        </div>
+        <div class="validate-input-at" data-validate="Обязательное поле">
+            <textarea class="input-at" name="message-at" placeholder="Ваше сообщение"></textarea>
+            <span class="focus-input-at"></span>
+        </div>
+        <input type="hidden" name="subject-at" value="Тема формы">
+        <button id="submit-at" class="form-at-btn">Отправить</button>
+        </div>
+        <div class="result-at"></div>
+        </div>
+             <div class="title" id="zap">
+                <h1>Наши отзывы</h1>
+            </div>
+            </form>
+            </div>
+    </div>
+    <style>
+        </style>
+        <script>
+            $(document).ready(function() {
+            $.ajax(
+               {
+                   url: "getdata_3-2.php",
+                   success: function (result) {
+                       let x = JSON.parse(result);
+                       for (let i = 0; i  < x.length; i++) {
+                           $('#zap').append('<div class="otz">'+
+                    '<div><h4>'+x[i].name+'</h4>'+
+                    '<p>'+x[i].mail+'</p>'+
+                    '</div>'+
+                    '<p>'+x[i].message+'</p>'+
+                '</div>');
+                       }
+                   }
+               } 
+            );});
+            $('#zap').submit(function(e) {
+                e.preventDefault();
+                let th=$(this);
+                $('#submitBtn').hide()
+                $.ajax({
+                    url: 'setdata_3-2.php',
+                    type: 'POST',
+                    data: th.serialize(),
+                    success: function(result){
+                        $('#submitBtn').show()
+                        alert(result);
+                        setTimeout(function() {
+                            th.trigger('reset');
+                        },1500)
+                    }
+                })
+            })
+        </script>
+</body>
+</html>
